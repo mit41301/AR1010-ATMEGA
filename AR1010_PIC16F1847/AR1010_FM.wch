@@ -1,0 +1,7 @@
+<WCH v="2">
+  <item n="CPSCON0" r="2" s="False" e="False" i="44"/>
+  <item n="CPSCON1" r="0" s="False" e="False" i="45"/>
+  <item n="ANSELA" r="2" s="False" e="False" i="75"/>
+  <item n="TRISA" r="2" s="False" e="False" i="158"/>
+  <item n="OPTION_REG" r="2" s="False" e="False" i="50"/>
+</WCH>
