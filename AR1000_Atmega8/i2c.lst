@@ -1,0 +1,1342 @@
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 1
+
+
+   1               		.file	"i2c.c"
+   2               		.arch atmega8
+   3               	__SREG__ = 0x3f
+   4               	__SP_H__ = 0x3e
+   5               	__SP_L__ = 0x3d
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+   8               		.global __do_copy_data
+   9               		.global __do_clear_bss
+  10               		.section	.debug_abbrev,"",@progbits
+  11               	.Ldebug_abbrev0:
+  12               		.section	.debug_info,"",@progbits
+  13               	.Ldebug_info0:
+  14               		.section	.debug_line,"",@progbits
+  15               	.Ldebug_line0:
+  16               		.text
+  17               	.Ltext0:
+  18               	.global	TWI_start
+  19               		.type	TWI_start, @function
+  20               	TWI_start:
+  21               	.LFB6:
+  22               	.LM1:
+  23               	/* prologue: frame size=0 */
+  24               	/* prologue end (size=0) */
+  25               	.LM2:
+  26 0000 84EA      		ldi r24,lo8(-92)
+  27 0002 86BF      		out 86-0x20,r24
+  28               	.L2:
+  29               	.LM3:
+  30 0004 06B6      		in __tmp_reg__,86-0x20
+  31 0006 07FE      		sbrs __tmp_reg__,7
+  32 0008 FDCF      		rjmp .L2
+  33               	.LM4:
+  34 000a 81B1      		in r24,33-0x20
+  35 000c 9927      		clr r25
+  36 000e 887F      		andi r24,lo8(248)
+  37 0010 9070      		andi r25,hi8(248)
+  38 0012 8830      		cpi r24,8
+  39 0014 9105      		cpc r25,__zero_reg__
+  40 0016 11F0      		breq .L6
+  41 0018 4097      		sbiw r24,16
+  42 001a 19F4      		brne .L8
+  43               	.L6:
+  44               	.LM5:
+  45 001c 81E0      		ldi r24,lo8(1)
+  46 001e 90E0      		ldi r25,hi8(1)
+  47 0020 0895      		ret
+  48               	.L8:
+  49               	.LM6:
+  50 0022 80E0      		ldi r24,lo8(0)
+  51 0024 90E0      		ldi r25,hi8(0)
+  52               	.LM7:
+  53 0026 0895      		ret
+  54               	/* epilogue: frame size=0 */
+  55               	/* epilogue: noreturn */
+  56               	/* epilogue end (size=0) */
+  57               	/* function TWI_start size 21 (21) */
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 2
+
+
+  58               	.LFE6:
+  59               		.size	TWI_start, .-TWI_start
+  60               	.global	TWI_stop
+  61               		.type	TWI_stop, @function
+  62               	TWI_stop:
+  63               	.LFB7:
+  64               	.LM8:
+  65               	/* prologue: frame size=0 */
+  66               	/* prologue end (size=0) */
+  67               	.LM9:
+  68 0028 84E9      		ldi r24,lo8(-108)
+  69 002a 86BF      		out 86-0x20,r24
+  70               	.LBB2:
+  71               	.LBB3:
+  72               	.LM10:
+  73 002c 8DE0      		ldi r24,lo8(13)
+  74               	.LBB4:
+  75               	.LBB5:
+  76               	.LM11:
+  77               	/* #APP */
+  78 002e 8A95      		1: dec r24
+  79 0030 F1F7      		brne 1b
+  80               	/* #NOAPP */
+  81               	.LBE5:
+  82               	.LBE4:
+  83               	.LBE3:
+  84               	.LBE2:
+  85               	/* epilogue: frame size=0 */
+  86 0032 0895      		ret
+  87               	/* epilogue end (size=1) */
+  88               	/* function TWI_stop size 8 (7) */
+  89               	.LFE7:
+  90               		.size	TWI_stop, .-TWI_stop
+  91               	.global	TWI_read
+  92               		.type	TWI_read, @function
+  93               	TWI_read:
+  94               	.LFB8:
+  95               	.LM12:
+  96               	/* prologue: frame size=0 */
+  97               	/* prologue end (size=0) */
+  98               	.LM13:
+  99 0034 8823      		tst r24
+ 100 0036 11F0      		breq .L27
+ 101               	.LM14:
+ 102 0038 84EC      		ldi r24,lo8(-60)
+ 103 003a 01C0      		rjmp .L44
+ 104               	.L27:
+ 105               	.LM15:
+ 106 003c 84E8      		ldi r24,lo8(-124)
+ 107               	.L44:
+ 108 003e 86BF      		out 86-0x20,r24
+ 109               	.L29:
+ 110               	.LM16:
+ 111 0040 06B6      		in __tmp_reg__,86-0x20
+ 112 0042 07FE      		sbrs __tmp_reg__,7
+ 113 0044 FDCF      		rjmp .L29
+ 114               	.LM17:
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 3
+
+
+ 115 0046 81B1      		in r24,33-0x20
+ 116 0048 9927      		clr r25
+ 117 004a 887F      		andi r24,lo8(248)
+ 118 004c 9070      		andi r25,hi8(248)
+ 119 004e 8035      		cpi r24,80
+ 120 0050 9105      		cpc r25,__zero_reg__
+ 121 0052 31F0      		breq .L39
+ 122 0054 8835      		cpi r24,88
+ 123 0056 9105      		cpc r25,__zero_reg__
+ 124 0058 19F0      		breq .L39
+ 125               	.LM18:
+ 126 005a 80E0      		ldi r24,lo8(0)
+ 127 005c 90E0      		ldi r25,hi8(0)
+ 128 005e 0895      		ret
+ 129               	.L39:
+ 130               	.LBB6:
+ 131               	.LBB7:
+ 132               	.LM19:
+ 133 0060 8DE0      		ldi r24,lo8(13)
+ 134               	.LBB8:
+ 135               	.LBB9:
+ 136               	.LM20:
+ 137               	/* #APP */
+ 138 0062 8A95      		1: dec r24
+ 139 0064 F1F7      		brne 1b
+ 140               	/* #NOAPP */
+ 141               	.LBE9:
+ 142               	.LBE8:
+ 143               	.LBE7:
+ 144               	.LBE6:
+ 145               	.LM21:
+ 146 0066 83B1      		in r24,35-0x20
+ 147 0068 9927      		clr r25
+ 148               	.LM22:
+ 149 006a 0895      		ret
+ 150               	/* epilogue: frame size=0 */
+ 151               	/* epilogue: noreturn */
+ 152               	/* epilogue end (size=0) */
+ 153               	/* function TWI_read size 30 (30) */
+ 154               	.LFE8:
+ 155               		.size	TWI_read, .-TWI_read
+ 156               	.global	TWI_send
+ 157               		.type	TWI_send, @function
+ 158               	TWI_send:
+ 159               	.LFB9:
+ 160               	.LM23:
+ 161               	/* prologue: frame size=0 */
+ 162               	/* prologue end (size=0) */
+ 163               	.LM24:
+ 164 006c 83B9      		out 35-0x20,r24
+ 165               	.LM25:
+ 166 006e 6623      		tst r22
+ 167 0070 11F0      		breq .L46
+ 168               	.LM26:
+ 169 0072 84EC      		ldi r24,lo8(-60)
+ 170 0074 01C0      		rjmp .L69
+ 171               	.L46:
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 4
+
+
+ 172               	.LM27:
+ 173 0076 84E8      		ldi r24,lo8(-124)
+ 174               	.L69:
+ 175 0078 86BF      		out 86-0x20,r24
+ 176               	.L48:
+ 177               	.LM28:
+ 178 007a 06B6      		in __tmp_reg__,86-0x20
+ 179 007c 07FE      		sbrs __tmp_reg__,7
+ 180 007e FDCF      		rjmp .L48
+ 181               	.LM29:
+ 182 0080 81B1      		in r24,33-0x20
+ 183 0082 9927      		clr r25
+ 184 0084 887F      		andi r24,lo8(248)
+ 185 0086 9070      		andi r25,hi8(248)
+ 186 0088 8832      		cpi r24,40
+ 187 008a 9105      		cpc r25,__zero_reg__
+ 188 008c E1F0      		breq .L56
+ 189 008e 8932      		cpi r24,41
+ 190 0090 9105      		cpc r25,__zero_reg__
+ 191 0092 34F4      		brge .L59
+ 192 0094 8831      		cpi r24,24
+ 193 0096 9105      		cpc r25,__zero_reg__
+ 194 0098 81F0      		breq .L52
+ 195 009a 8097      		sbiw r24,32
+ 196 009c 71F0      		breq .L52
+ 197 009e 16C0      		rjmp .L58
+ 198               	.L59:
+ 199 00a0 8034      		cpi r24,64
+ 200 00a2 9105      		cpc r25,__zero_reg__
+ 201 00a4 69F0      		breq .L54
+ 202 00a6 8134      		cpi r24,65
+ 203 00a8 9105      		cpc r25,__zero_reg__
+ 204 00aa 1CF4      		brge .L60
+ 205 00ac C097      		sbiw r24,48
+ 206 00ae 59F0      		breq .L56
+ 207 00b0 0DC0      		rjmp .L58
+ 208               	.L60:
+ 209 00b2 8834      		cpi r24,72
+ 210 00b4 9105      		cpc r25,__zero_reg__
+ 211 00b6 21F0      		breq .L54
+ 212 00b8 09C0      		rjmp .L58
+ 213               	.L52:
+ 214               	.LM30:
+ 215 00ba 81E0      		ldi r24,lo8(1)
+ 216 00bc 90E0      		ldi r25,hi8(1)
+ 217 00be 0895      		ret
+ 218               	.L54:
+ 219               	.LM31:
+ 220 00c0 82E0      		ldi r24,lo8(2)
+ 221 00c2 90E0      		ldi r25,hi8(2)
+ 222 00c4 0895      		ret
+ 223               	.L56:
+ 224               	.LM32:
+ 225 00c6 83E0      		ldi r24,lo8(3)
+ 226 00c8 90E0      		ldi r25,hi8(3)
+ 227 00ca 0895      		ret
+ 228               	.L58:
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 5
+
+
+ 229               	.LM33:
+ 230 00cc 80E0      		ldi r24,lo8(0)
+ 231 00ce 90E0      		ldi r25,hi8(0)
+ 232               	.LM34:
+ 233 00d0 0895      		ret
+ 234               	/* epilogue: frame size=0 */
+ 235               	/* epilogue: noreturn */
+ 236               	/* epilogue end (size=0) */
+ 237               	/* function TWI_send size 53 (53) */
+ 238               	.LFE9:
+ 239               		.size	TWI_send, .-TWI_send
+ 240               	.Letext0:
+ 241               		.section	.debug_line
+ 242 0000 7D01 0000 		.long	.LELT0-.LSLT0
+ 243               	
+ 244               	.LSLT0:
+ 245 0004 0200      		.word	2
+ 246               	
+ 247 0006 9000 0000 		.long	.LELTP0-.LASLTP0
+ 248               	
+ 249               	.LASLTP0:
+ 250 000a 01        		.byte	0x1
+ 251 000b 01        		.byte	0x1
+ 252 000c F6        		.byte	0xf6
+ 253 000d F5        		.byte	0xf5
+ 254 000e 0A        		.byte	0xa
+ 255 000f 00        		.byte	0x0
+ 256 0010 01        		.byte	0x1
+ 257 0011 01        		.byte	0x1
+ 258 0012 01        		.byte	0x1
+ 259 0013 01        		.byte	0x1
+ 260 0014 00        		.byte	0x0
+ 261 0015 00        		.byte	0x0
+ 262 0016 00        		.byte	0x0
+ 263 0017 01        		.byte	0x1
+ 264 0018 433A 2F57 		.ascii	"C:/WinAVR/avr/include"
+ 264      696E 4156 
+ 264      522F 6176 
+ 264      722F 696E 
+ 264      636C 7564 
+ 265 002d 00        		.byte	0
+ 266 002e 433A 5C57 		.ascii	"C:\\WinAVR\\bin/../lib/gcc/avr/3.4.6/include"
+ 266      696E 4156 
+ 266      525C 6269 
+ 266      6E2F 2E2E 
+ 266      2F6C 6962 
+ 267 0058 00        		.byte	0
+ 268 0059 00        		.byte	0x0
+ 269 005a 7374 6469 		.string	"stdint.h"
+ 269      6E74 2E68 
+ 269      00
+ 270 0063 01        		.uleb128 0x1
+ 271 0064 00        		.uleb128 0x0
+ 272 0065 00        		.uleb128 0x0
+ 273 0066 696E 7474 		.string	"inttypes.h"
+ 273      7970 6573 
+ 273      2E68 00
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 6
+
+
+ 274 0071 01        		.uleb128 0x1
+ 275 0072 00        		.uleb128 0x0
+ 276 0073 00        		.uleb128 0x0
+ 277 0074 7374 6464 		.string	"stddef.h"
+ 277      6566 2E68 
+ 277      00
+ 278 007d 02        		.uleb128 0x2
+ 279 007e 00        		.uleb128 0x0
+ 280 007f 00        		.uleb128 0x0
+ 281 0080 6932 632E 		.string	"i2c.c"
+ 281      6300 
+ 282 0086 00        		.uleb128 0x0
+ 283 0087 00        		.uleb128 0x0
+ 284 0088 00        		.uleb128 0x0
+ 285 0089 7574 696C 		.string	"util/delay.h"
+ 285      2F64 656C 
+ 285      6179 2E68 
+ 285      00
+ 286 0096 01        		.uleb128 0x1
+ 287 0097 00        		.uleb128 0x0
+ 288 0098 00        		.uleb128 0x0
+ 289 0099 00        		.byte	0x0
+ 290               	.LELTP0:
+ 291 009a 00        		.byte	0x0
+ 292 009b 03        		.uleb128 0x3
+ 293 009c 02        		.byte	0x2
+ 294 009d 0000      		.word	.LM1
+ 295               	
+ 296 009f 04        		.byte	0x4
+ 297 00a0 04        		.uleb128 0x4
+ 298 00a1 1D        		.byte	0x1d
+ 299 00a2 00        		.byte	0x0
+ 300 00a3 03        		.uleb128 0x3
+ 301 00a4 02        		.byte	0x2
+ 302 00a5 0000      		.word	.LM2
+ 303               	
+ 304 00a7 15        		.byte	0x15
+ 305 00a8 00        		.byte	0x0
+ 306 00a9 03        		.uleb128 0x3
+ 307 00aa 02        		.byte	0x2
+ 308 00ab 0000      		.word	.LM3
+ 309               	
+ 310 00ad 16        		.byte	0x16
+ 311 00ae 00        		.byte	0x0
+ 312 00af 03        		.uleb128 0x3
+ 313 00b0 02        		.byte	0x2
+ 314 00b1 0000      		.word	.LM4
+ 315               	
+ 316 00b3 16        		.byte	0x16
+ 317 00b4 00        		.byte	0x0
+ 318 00b5 03        		.uleb128 0x3
+ 319 00b6 02        		.byte	0x2
+ 320 00b7 0000      		.word	.LM5
+ 321               	
+ 322 00b9 18        		.byte	0x18
+ 323 00ba 00        		.byte	0x0
+ 324 00bb 03        		.uleb128 0x3
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 7
+
+
+ 325 00bc 02        		.byte	0x2
+ 326 00bd 0000      		.word	.LM6
+ 327               	
+ 328 00bf 18        		.byte	0x18
+ 329 00c0 00        		.byte	0x0
+ 330 00c1 03        		.uleb128 0x3
+ 331 00c2 02        		.byte	0x2
+ 332 00c3 0000      		.word	.LM7
+ 333               	
+ 334 00c5 17        		.byte	0x17
+ 335 00c6 00        		.byte	0x0
+ 336 00c7 03        		.uleb128 0x3
+ 337 00c8 02        		.byte	0x2
+ 338 00c9 0000      		.word	.LM8
+ 339               	
+ 340 00cb 17        		.byte	0x17
+ 341 00cc 00        		.byte	0x0
+ 342 00cd 03        		.uleb128 0x3
+ 343 00ce 02        		.byte	0x2
+ 344 00cf 0000      		.word	.LM9
+ 345               	
+ 346 00d1 15        		.byte	0x15
+ 347 00d2 00        		.byte	0x0
+ 348 00d3 03        		.uleb128 0x3
+ 349 00d4 02        		.byte	0x2
+ 350 00d5 0000      		.word	.LM10
+ 351               	
+ 352 00d7 04        		.byte	0x4
+ 353 00d8 05        		.uleb128 0x5
+ 354 00d9 97        		.byte	0x97
+ 355 00da 00        		.byte	0x0
+ 356 00db 03        		.uleb128 0x3
+ 357 00dc 02        		.byte	0x2
+ 358 00dd 0000      		.word	.LM11
+ 359               	
+ 360 00df 03        		.byte	0x3
+ 361 00e0 47        		.sleb128 -57
+ 362 00e1 01        		.byte	0x1
+ 363 00e2 00        		.byte	0x0
+ 364 00e3 03        		.uleb128 0x3
+ 365 00e4 02        		.byte	0x2
+ 366 00e5 0000      		.word	.LM12
+ 367               	
+ 368 00e7 04        		.byte	0x4
+ 369 00e8 04        		.uleb128 0x4
+ 370 00e9 03        		.byte	0x3
+ 371 00ea BB7F      		.sleb128 -69
+ 372 00ec 01        		.byte	0x1
+ 373 00ed 00        		.byte	0x0
+ 374 00ee 03        		.uleb128 0x3
+ 375 00ef 02        		.byte	0x2
+ 376 00f0 0000      		.word	.LM13
+ 377               	
+ 378 00f2 16        		.byte	0x16
+ 379 00f3 00        		.byte	0x0
+ 380 00f4 03        		.uleb128 0x3
+ 381 00f5 02        		.byte	0x2
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 8
+
+
+ 382 00f6 0000      		.word	.LM14
+ 383               	
+ 384 00f8 15        		.byte	0x15
+ 385 00f9 00        		.byte	0x0
+ 386 00fa 03        		.uleb128 0x3
+ 387 00fb 02        		.byte	0x2
+ 388 00fc 0000      		.word	.LM15
+ 389               	
+ 390 00fe 16        		.byte	0x16
+ 391 00ff 00        		.byte	0x0
+ 392 0100 03        		.uleb128 0x3
+ 393 0101 02        		.byte	0x2
+ 394 0102 0000      		.word	.LM16
+ 395               	
+ 396 0104 17        		.byte	0x17
+ 397 0105 00        		.byte	0x0
+ 398 0106 03        		.uleb128 0x3
+ 399 0107 02        		.byte	0x2
+ 400 0108 0000      		.word	.LM17
+ 401               	
+ 402 010a 16        		.byte	0x16
+ 403 010b 00        		.byte	0x0
+ 404 010c 03        		.uleb128 0x3
+ 405 010d 02        		.byte	0x2
+ 406 010e 0000      		.word	.LM18
+ 407               	
+ 408 0110 1D        		.byte	0x1d
+ 409 0111 00        		.byte	0x0
+ 410 0112 03        		.uleb128 0x3
+ 411 0113 02        		.byte	0x2
+ 412 0114 0000      		.word	.LM19
+ 413               	
+ 414 0116 04        		.byte	0x4
+ 415 0117 05        		.uleb128 0x5
+ 416 0118 7F        		.byte	0x7f
+ 417 0119 00        		.byte	0x0
+ 418 011a 03        		.uleb128 0x3
+ 419 011b 02        		.byte	0x2
+ 420 011c 0000      		.word	.LM20
+ 421               	
+ 422 011e 03        		.byte	0x3
+ 423 011f 47        		.sleb128 -57
+ 424 0120 01        		.byte	0x1
+ 425 0121 00        		.byte	0x0
+ 426 0122 03        		.uleb128 0x3
+ 427 0123 02        		.byte	0x2
+ 428 0124 0000      		.word	.LM21
+ 429               	
+ 430 0126 04        		.byte	0x4
+ 431 0127 04        		.uleb128 0x4
+ 432 0128 03        		.byte	0x3
+ 433 0129 51        		.sleb128 -47
+ 434 012a 01        		.byte	0x1
+ 435 012b 00        		.byte	0x0
+ 436 012c 03        		.uleb128 0x3
+ 437 012d 02        		.byte	0x2
+ 438 012e 0000      		.word	.LM22
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 9
+
+
+ 439               	
+ 440 0130 15        		.byte	0x15
+ 441 0131 00        		.byte	0x0
+ 442 0132 03        		.uleb128 0x3
+ 443 0133 02        		.byte	0x2
+ 444 0134 0000      		.word	.LM23
+ 445               	
+ 446 0136 17        		.byte	0x17
+ 447 0137 00        		.byte	0x0
+ 448 0138 03        		.uleb128 0x3
+ 449 0139 02        		.byte	0x2
+ 450 013a 0000      		.word	.LM24
+ 451               	
+ 452 013c 15        		.byte	0x15
+ 453 013d 00        		.byte	0x0
+ 454 013e 03        		.uleb128 0x3
+ 455 013f 02        		.byte	0x2
+ 456 0140 0000      		.word	.LM25
+ 457               	
+ 458 0142 16        		.byte	0x16
+ 459 0143 00        		.byte	0x0
+ 460 0144 03        		.uleb128 0x3
+ 461 0145 02        		.byte	0x2
+ 462 0146 0000      		.word	.LM26
+ 463               	
+ 464 0148 15        		.byte	0x15
+ 465 0149 00        		.byte	0x0
+ 466 014a 03        		.uleb128 0x3
+ 467 014b 02        		.byte	0x2
+ 468 014c 0000      		.word	.LM27
+ 469               	
+ 470 014e 16        		.byte	0x16
+ 471 014f 00        		.byte	0x0
+ 472 0150 03        		.uleb128 0x3
+ 473 0151 02        		.byte	0x2
+ 474 0152 0000      		.word	.LM28
+ 475               	
+ 476 0154 17        		.byte	0x17
+ 477 0155 00        		.byte	0x0
+ 478 0156 03        		.uleb128 0x3
+ 479 0157 02        		.byte	0x2
+ 480 0158 0000      		.word	.LM29
+ 481               	
+ 482 015a 16        		.byte	0x16
+ 483 015b 00        		.byte	0x0
+ 484 015c 03        		.uleb128 0x3
+ 485 015d 02        		.byte	0x2
+ 486 015e 0000      		.word	.LM30
+ 487               	
+ 488 0160 18        		.byte	0x18
+ 489 0161 00        		.byte	0x0
+ 490 0162 03        		.uleb128 0x3
+ 491 0163 02        		.byte	0x2
+ 492 0164 0000      		.word	.LM31
+ 493               	
+ 494 0166 19        		.byte	0x19
+ 495 0167 00        		.byte	0x0
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 10
+
+
+ 496 0168 03        		.uleb128 0x3
+ 497 0169 02        		.byte	0x2
+ 498 016a 0000      		.word	.LM32
+ 499               	
+ 500 016c 19        		.byte	0x19
+ 501 016d 00        		.byte	0x0
+ 502 016e 03        		.uleb128 0x3
+ 503 016f 02        		.byte	0x2
+ 504 0170 0000      		.word	.LM33
+ 505               	
+ 506 0172 18        		.byte	0x18
+ 507 0173 00        		.byte	0x0
+ 508 0174 03        		.uleb128 0x3
+ 509 0175 02        		.byte	0x2
+ 510 0176 0000      		.word	.LM34
+ 511               	
+ 512 0178 17        		.byte	0x17
+ 513 0179 00        		.byte	0x0
+ 514 017a 03        		.uleb128 0x3
+ 515 017b 02        		.byte	0x2
+ 516 017c 0000      		.word	.Letext0
+ 517               	
+ 518 017e 00        		.byte	0x0
+ 519 017f 01        		.uleb128 0x1
+ 520 0180 01        		.byte	0x1
+ 521               	.LELT0:
+ 522 0181 1600 0000 		.section	.debug_info
+ 522      0200 1000 
+ 522      0000 0101 
+ 522      FB0E 0A00 
+ 522      0101 0101 
+ 523 0000 A601 0000 		.long	422
+ 524               	
+ 525 0004 0200      		.word	2
+ 526               	
+ 527 0006 0000 0000 		.long	.Ldebug_abbrev0
+ 528               	
+ 529 000a 02        		.byte	0x2
+ 530 000b 01        		.uleb128 0x1
+ 531 000c 0000 0000 		.long	.Ldebug_line0
+ 532               	
+ 533 0010 0000      		.word	.Letext0
+ 534               	
+ 535 0012 0000      		.word	.Ltext0
+ 536               	
+ 537 0014 0000 0000 		.long	.LASF18
+ 538               	
+ 539 0018 01        		.byte	0x1
+ 540 0019 0000 0000 		.long	.LASF19
+ 541               	
+ 542 001d 0000 0000 		.long	.LASF20
+ 543               	
+ 544 0021 02        		.uleb128 0x2
+ 545 0022 0000 0000 		.long	.LASF0
+ 546               	
+ 547 0026 01        		.byte	0x1
+ 548 0027 06        		.byte	0x6
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 11
+
+
+ 549 0028 03        		.uleb128 0x3
+ 550 0029 0000 0000 		.long	.LASF21
+ 551               	
+ 552 002d 01        		.byte	0x1
+ 553 002e 75        		.byte	0x75
+ 554 002f 3300 0000 		.long	51
+ 555               	
+ 556 0033 02        		.uleb128 0x2
+ 557 0034 0000 0000 		.long	.LASF1
+ 558               	
+ 559 0038 01        		.byte	0x1
+ 560 0039 08        		.byte	0x8
+ 561 003a 04        		.uleb128 0x4
+ 562 003b 696E 7400 		.string	"int"
+ 563 003f 02        		.byte	0x2
+ 564 0040 05        		.byte	0x5
+ 565 0041 02        		.uleb128 0x2
+ 566 0042 0000 0000 		.long	.LASF2
+ 567               	
+ 568 0046 02        		.byte	0x2
+ 569 0047 07        		.byte	0x7
+ 570 0048 02        		.uleb128 0x2
+ 571 0049 0000 0000 		.long	.LASF3
+ 572               	
+ 573 004d 04        		.byte	0x4
+ 574 004e 05        		.byte	0x5
+ 575 004f 02        		.uleb128 0x2
+ 576 0050 0000 0000 		.long	.LASF4
+ 577               	
+ 578 0054 04        		.byte	0x4
+ 579 0055 07        		.byte	0x7
+ 580 0056 02        		.uleb128 0x2
+ 581 0057 0000 0000 		.long	.LASF5
+ 582               	
+ 583 005b 08        		.byte	0x8
+ 584 005c 05        		.byte	0x5
+ 585 005d 02        		.uleb128 0x2
+ 586 005e 0000 0000 		.long	.LASF6
+ 587               	
+ 588 0062 08        		.byte	0x8
+ 589 0063 07        		.byte	0x7
+ 590 0064 05        		.uleb128 0x5
+ 591 0065 01        		.byte	0x1
+ 592 0066 0000 0000 		.long	.LASF22
+ 593               	
+ 594 006a 04        		.byte	0x4
+ 595 006b 0A        		.byte	0xa
+ 596 006c 01        		.byte	0x1
+ 597 006d 2800 0000 		.long	40
+ 598               	
+ 599 0071 0000      		.word	.LFB6
+ 600               	
+ 601 0073 0000      		.word	.LFE6
+ 602               	
+ 603 0075 08        		.byte	0x8
+ 604 0076 90        		.byte	0x90
+ 605 0077 20        		.uleb128 0x20
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 12
+
+
+ 606 0078 93        		.byte	0x93
+ 607 0079 01        		.uleb128 0x1
+ 608 007a 90        		.byte	0x90
+ 609 007b 21        		.uleb128 0x21
+ 610 007c 93        		.byte	0x93
+ 611 007d 01        		.uleb128 0x1
+ 612 007e 06        		.uleb128 0x6
+ 613 007f C900 0000 		.long	201
+ 614               	
+ 615 0083 01        		.byte	0x1
+ 616 0084 0000 0000 		.long	.LASF14
+ 617               	
+ 618 0088 04        		.byte	0x4
+ 619 0089 1D        		.byte	0x1d
+ 620 008a 01        		.byte	0x1
+ 621 008b 0000      		.word	.LFB7
+ 622               	
+ 623 008d 0000      		.word	.LFE7
+ 624               	
+ 625 008f 08        		.byte	0x8
+ 626 0090 90        		.byte	0x90
+ 627 0091 20        		.uleb128 0x20
+ 628 0092 93        		.byte	0x93
+ 629 0093 01        		.uleb128 0x1
+ 630 0094 90        		.byte	0x90
+ 631 0095 21        		.uleb128 0x21
+ 632 0096 93        		.byte	0x93
+ 633 0097 01        		.uleb128 0x1
+ 634 0098 07        		.uleb128 0x7
+ 635 0099 C900 0000 		.long	201
+ 636               	
+ 637 009d 0000      		.word	.LBB2
+ 638               	
+ 639 009f 0000      		.word	.LBE2
+ 640               	
+ 641 00a1 08        		.uleb128 0x8
+ 642 00a2 D600 0000 		.long	214
+ 643               	
+ 644 00a6 09        		.uleb128 0x9
+ 645 00a7 0000      		.word	.LBB3
+ 646               	
+ 647 00a9 0000      		.word	.LBE3
+ 648               	
+ 649 00ab 0A        		.uleb128 0xa
+ 650 00ac E100 0000 		.long	225
+ 651               	
+ 652 00b0 0A        		.uleb128 0xa
+ 653 00b1 EC00 0000 		.long	236
+ 654               	
+ 655 00b5 07        		.uleb128 0x7
+ 656 00b6 FF00 0000 		.long	255
+ 657               	
+ 658 00ba 0000      		.word	.LBB4
+ 659               	
+ 660 00bc 0000      		.word	.LBE4
+ 661               	
+ 662 00be 0B        		.uleb128 0xb
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 13
+
+
+ 663 00bf 0C01 0000 		.long	268
+ 664               	
+ 665 00c3 01        		.byte	0x1
+ 666 00c4 68        		.byte	0x68
+ 667 00c5 00        		.byte	0x0
+ 668 00c6 00        		.byte	0x0
+ 669 00c7 00        		.byte	0x0
+ 670 00c8 00        		.byte	0x0
+ 671 00c9 0C        		.uleb128 0xc
+ 672 00ca F800 0000 		.long	248
+ 673               	
+ 674 00ce 0000 0000 		.long	.LASF10
+ 675               	
+ 676 00d2 05        		.byte	0x5
+ 677 00d3 99        		.byte	0x99
+ 678 00d4 01        		.byte	0x1
+ 679 00d5 03        		.byte	0x3
+ 680 00d6 0D        		.uleb128 0xd
+ 681 00d7 0000 0000 		.long	.LASF12
+ 682               	
+ 683 00db 05        		.byte	0x5
+ 684 00dc 98        		.byte	0x98
+ 685 00dd F800 0000 		.long	248
+ 686               	
+ 687 00e1 0E        		.uleb128 0xe
+ 688 00e2 0000 0000 		.long	.LASF7
+ 689               	
+ 690 00e6 05        		.byte	0x5
+ 691 00e7 9A        		.byte	0x9a
+ 692 00e8 2800 0000 		.long	40
+ 693               	
+ 694 00ec 0E        		.uleb128 0xe
+ 695 00ed 0000 0000 		.long	.LASF8
+ 696               	
+ 697 00f1 05        		.byte	0x5
+ 698 00f2 9B        		.byte	0x9b
+ 699 00f3 F800 0000 		.long	248
+ 700               	
+ 701 00f7 00        		.byte	0x0
+ 702 00f8 02        		.uleb128 0x2
+ 703 00f9 0000 0000 		.long	.LASF9
+ 704               	
+ 705 00fd 04        		.byte	0x4
+ 706 00fe 04        		.byte	0x4
+ 707 00ff 0C        		.uleb128 0xc
+ 708 0100 1801 0000 		.long	280
+ 709               	
+ 710 0104 0000 0000 		.long	.LASF11
+ 711               	
+ 712 0108 05        		.byte	0x5
+ 713 0109 67        		.byte	0x67
+ 714 010a 01        		.byte	0x1
+ 715 010b 03        		.byte	0x3
+ 716 010c 0D        		.uleb128 0xd
+ 717 010d 0000 0000 		.long	.LASF13
+ 718               	
+ 719 0111 05        		.byte	0x5
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 14
+
+
+ 720 0112 66        		.byte	0x66
+ 721 0113 2800 0000 		.long	40
+ 722               	
+ 723 0117 00        		.byte	0x0
+ 724 0118 0F        		.uleb128 0xf
+ 725 0119 7401 0000 		.long	372
+ 726               	
+ 727 011d 01        		.byte	0x1
+ 728 011e 0000 0000 		.long	.LASF15
+ 729               	
+ 730 0122 04        		.byte	0x4
+ 731 0123 23        		.byte	0x23
+ 732 0124 01        		.byte	0x1
+ 733 0125 2800 0000 		.long	40
+ 734               	
+ 735 0129 0000      		.word	.LFB8
+ 736               	
+ 737 012b 0000      		.word	.LFE8
+ 738               	
+ 739 012d 08        		.byte	0x8
+ 740 012e 90        		.byte	0x90
+ 741 012f 20        		.uleb128 0x20
+ 742 0130 93        		.byte	0x93
+ 743 0131 01        		.uleb128 0x1
+ 744 0132 90        		.byte	0x90
+ 745 0133 21        		.uleb128 0x21
+ 746 0134 93        		.byte	0x93
+ 747 0135 01        		.uleb128 0x1
+ 748 0136 10        		.uleb128 0x10
+ 749 0137 0000 0000 		.long	.LASF16
+ 750               	
+ 751 013b 04        		.byte	0x4
+ 752 013c 22        		.byte	0x22
+ 753 013d 2800 0000 		.long	40
+ 754               	
+ 755 0141 01        		.byte	0x1
+ 756 0142 68        		.byte	0x68
+ 757 0143 07        		.uleb128 0x7
+ 758 0144 C900 0000 		.long	201
+ 759               	
+ 760 0148 0000      		.word	.LBB6
+ 761               	
+ 762 014a 0000      		.word	.LBE6
+ 763               	
+ 764 014c 08        		.uleb128 0x8
+ 765 014d D600 0000 		.long	214
+ 766               	
+ 767 0151 09        		.uleb128 0x9
+ 768 0152 0000      		.word	.LBB7
+ 769               	
+ 770 0154 0000      		.word	.LBE7
+ 771               	
+ 772 0156 0A        		.uleb128 0xa
+ 773 0157 E100 0000 		.long	225
+ 774               	
+ 775 015b 0A        		.uleb128 0xa
+ 776 015c EC00 0000 		.long	236
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 15
+
+
+ 777               	
+ 778 0160 07        		.uleb128 0x7
+ 779 0161 FF00 0000 		.long	255
+ 780               	
+ 781 0165 0000      		.word	.LBB8
+ 782               	
+ 783 0167 0000      		.word	.LBE8
+ 784               	
+ 785 0169 0B        		.uleb128 0xb
+ 786 016a 0C01 0000 		.long	268
+ 787               	
+ 788 016e 01        		.byte	0x1
+ 789 016f 68        		.byte	0x68
+ 790 0170 00        		.byte	0x0
+ 791 0171 00        		.byte	0x0
+ 792 0172 00        		.byte	0x0
+ 793 0173 00        		.byte	0x0
+ 794 0174 11        		.uleb128 0x11
+ 795 0175 01        		.byte	0x1
+ 796 0176 0000 0000 		.long	.LASF23
+ 797               	
+ 798 017a 04        		.byte	0x4
+ 799 017b 3D        		.byte	0x3d
+ 800 017c 01        		.byte	0x1
+ 801 017d 2800 0000 		.long	40
+ 802               	
+ 803 0181 0000      		.word	.LFB9
+ 804               	
+ 805 0183 0000      		.word	.LFE9
+ 806               	
+ 807 0185 08        		.byte	0x8
+ 808 0186 90        		.byte	0x90
+ 809 0187 20        		.uleb128 0x20
+ 810 0188 93        		.byte	0x93
+ 811 0189 01        		.uleb128 0x1
+ 812 018a 90        		.byte	0x90
+ 813 018b 21        		.uleb128 0x21
+ 814 018c 93        		.byte	0x93
+ 815 018d 01        		.uleb128 0x1
+ 816 018e 10        		.uleb128 0x10
+ 817 018f 0000 0000 		.long	.LASF17
+ 818               	
+ 819 0193 04        		.byte	0x4
+ 820 0194 3C        		.byte	0x3c
+ 821 0195 2800 0000 		.long	40
+ 822               	
+ 823 0199 01        		.byte	0x1
+ 824 019a 68        		.byte	0x68
+ 825 019b 10        		.uleb128 0x10
+ 826 019c 0000 0000 		.long	.LASF16
+ 827               	
+ 828 01a0 04        		.byte	0x4
+ 829 01a1 3C        		.byte	0x3c
+ 830 01a2 2800 0000 		.long	40
+ 831               	
+ 832 01a6 01        		.byte	0x1
+ 833 01a7 69        		.byte	0x69
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 16
+
+
+ 834 01a8 00        		.byte	0x0
+ 835 01a9 00        		.byte	0x0
+ 836               		.section	.debug_abbrev
+ 837 0000 01        		.uleb128 0x1
+ 838 0001 11        		.uleb128 0x11
+ 839 0002 01        		.byte	0x1
+ 840 0003 10        		.uleb128 0x10
+ 841 0004 06        		.uleb128 0x6
+ 842 0005 12        		.uleb128 0x12
+ 843 0006 01        		.uleb128 0x1
+ 844 0007 11        		.uleb128 0x11
+ 845 0008 01        		.uleb128 0x1
+ 846 0009 25        		.uleb128 0x25
+ 847 000a 0E        		.uleb128 0xe
+ 848 000b 13        		.uleb128 0x13
+ 849 000c 0B        		.uleb128 0xb
+ 850 000d 03        		.uleb128 0x3
+ 851 000e 0E        		.uleb128 0xe
+ 852 000f 1B        		.uleb128 0x1b
+ 853 0010 0E        		.uleb128 0xe
+ 854 0011 00        		.byte	0x0
+ 855 0012 00        		.byte	0x0
+ 856 0013 02        		.uleb128 0x2
+ 857 0014 24        		.uleb128 0x24
+ 858 0015 00        		.byte	0x0
+ 859 0016 03        		.uleb128 0x3
+ 860 0017 0E        		.uleb128 0xe
+ 861 0018 0B        		.uleb128 0xb
+ 862 0019 0B        		.uleb128 0xb
+ 863 001a 3E        		.uleb128 0x3e
+ 864 001b 0B        		.uleb128 0xb
+ 865 001c 00        		.byte	0x0
+ 866 001d 00        		.byte	0x0
+ 867 001e 03        		.uleb128 0x3
+ 868 001f 16        		.uleb128 0x16
+ 869 0020 00        		.byte	0x0
+ 870 0021 03        		.uleb128 0x3
+ 871 0022 0E        		.uleb128 0xe
+ 872 0023 3A        		.uleb128 0x3a
+ 873 0024 0B        		.uleb128 0xb
+ 874 0025 3B        		.uleb128 0x3b
+ 875 0026 0B        		.uleb128 0xb
+ 876 0027 49        		.uleb128 0x49
+ 877 0028 13        		.uleb128 0x13
+ 878 0029 00        		.byte	0x0
+ 879 002a 00        		.byte	0x0
+ 880 002b 04        		.uleb128 0x4
+ 881 002c 24        		.uleb128 0x24
+ 882 002d 00        		.byte	0x0
+ 883 002e 03        		.uleb128 0x3
+ 884 002f 08        		.uleb128 0x8
+ 885 0030 0B        		.uleb128 0xb
+ 886 0031 0B        		.uleb128 0xb
+ 887 0032 3E        		.uleb128 0x3e
+ 888 0033 0B        		.uleb128 0xb
+ 889 0034 00        		.byte	0x0
+ 890 0035 00        		.byte	0x0
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 17
+
+
+ 891 0036 05        		.uleb128 0x5
+ 892 0037 2E        		.uleb128 0x2e
+ 893 0038 00        		.byte	0x0
+ 894 0039 3F        		.uleb128 0x3f
+ 895 003a 0C        		.uleb128 0xc
+ 896 003b 03        		.uleb128 0x3
+ 897 003c 0E        		.uleb128 0xe
+ 898 003d 3A        		.uleb128 0x3a
+ 899 003e 0B        		.uleb128 0xb
+ 900 003f 3B        		.uleb128 0x3b
+ 901 0040 0B        		.uleb128 0xb
+ 902 0041 27        		.uleb128 0x27
+ 903 0042 0C        		.uleb128 0xc
+ 904 0043 49        		.uleb128 0x49
+ 905 0044 13        		.uleb128 0x13
+ 906 0045 11        		.uleb128 0x11
+ 907 0046 01        		.uleb128 0x1
+ 908 0047 12        		.uleb128 0x12
+ 909 0048 01        		.uleb128 0x1
+ 910 0049 40        		.uleb128 0x40
+ 911 004a 0A        		.uleb128 0xa
+ 912 004b 00        		.byte	0x0
+ 913 004c 00        		.byte	0x0
+ 914 004d 06        		.uleb128 0x6
+ 915 004e 2E        		.uleb128 0x2e
+ 916 004f 01        		.byte	0x1
+ 917 0050 01        		.uleb128 0x1
+ 918 0051 13        		.uleb128 0x13
+ 919 0052 3F        		.uleb128 0x3f
+ 920 0053 0C        		.uleb128 0xc
+ 921 0054 03        		.uleb128 0x3
+ 922 0055 0E        		.uleb128 0xe
+ 923 0056 3A        		.uleb128 0x3a
+ 924 0057 0B        		.uleb128 0xb
+ 925 0058 3B        		.uleb128 0x3b
+ 926 0059 0B        		.uleb128 0xb
+ 927 005a 27        		.uleb128 0x27
+ 928 005b 0C        		.uleb128 0xc
+ 929 005c 11        		.uleb128 0x11
+ 930 005d 01        		.uleb128 0x1
+ 931 005e 12        		.uleb128 0x12
+ 932 005f 01        		.uleb128 0x1
+ 933 0060 40        		.uleb128 0x40
+ 934 0061 0A        		.uleb128 0xa
+ 935 0062 00        		.byte	0x0
+ 936 0063 00        		.byte	0x0
+ 937 0064 07        		.uleb128 0x7
+ 938 0065 1D        		.uleb128 0x1d
+ 939 0066 01        		.byte	0x1
+ 940 0067 31        		.uleb128 0x31
+ 941 0068 13        		.uleb128 0x13
+ 942 0069 11        		.uleb128 0x11
+ 943 006a 01        		.uleb128 0x1
+ 944 006b 12        		.uleb128 0x12
+ 945 006c 01        		.uleb128 0x1
+ 946 006d 00        		.byte	0x0
+ 947 006e 00        		.byte	0x0
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 18
+
+
+ 948 006f 08        		.uleb128 0x8
+ 949 0070 05        		.uleb128 0x5
+ 950 0071 00        		.byte	0x0
+ 951 0072 31        		.uleb128 0x31
+ 952 0073 13        		.uleb128 0x13
+ 953 0074 00        		.byte	0x0
+ 954 0075 00        		.byte	0x0
+ 955 0076 09        		.uleb128 0x9
+ 956 0077 0B        		.uleb128 0xb
+ 957 0078 01        		.byte	0x1
+ 958 0079 11        		.uleb128 0x11
+ 959 007a 01        		.uleb128 0x1
+ 960 007b 12        		.uleb128 0x12
+ 961 007c 01        		.uleb128 0x1
+ 962 007d 00        		.byte	0x0
+ 963 007e 00        		.byte	0x0
+ 964 007f 0A        		.uleb128 0xa
+ 965 0080 34        		.uleb128 0x34
+ 966 0081 00        		.byte	0x0
+ 967 0082 31        		.uleb128 0x31
+ 968 0083 13        		.uleb128 0x13
+ 969 0084 00        		.byte	0x0
+ 970 0085 00        		.byte	0x0
+ 971 0086 0B        		.uleb128 0xb
+ 972 0087 05        		.uleb128 0x5
+ 973 0088 00        		.byte	0x0
+ 974 0089 31        		.uleb128 0x31
+ 975 008a 13        		.uleb128 0x13
+ 976 008b 02        		.uleb128 0x2
+ 977 008c 0A        		.uleb128 0xa
+ 978 008d 00        		.byte	0x0
+ 979 008e 00        		.byte	0x0
+ 980 008f 0C        		.uleb128 0xc
+ 981 0090 2E        		.uleb128 0x2e
+ 982 0091 01        		.byte	0x1
+ 983 0092 01        		.uleb128 0x1
+ 984 0093 13        		.uleb128 0x13
+ 985 0094 03        		.uleb128 0x3
+ 986 0095 0E        		.uleb128 0xe
+ 987 0096 3A        		.uleb128 0x3a
+ 988 0097 0B        		.uleb128 0xb
+ 989 0098 3B        		.uleb128 0x3b
+ 990 0099 0B        		.uleb128 0xb
+ 991 009a 27        		.uleb128 0x27
+ 992 009b 0C        		.uleb128 0xc
+ 993 009c 20        		.uleb128 0x20
+ 994 009d 0B        		.uleb128 0xb
+ 995 009e 00        		.byte	0x0
+ 996 009f 00        		.byte	0x0
+ 997 00a0 0D        		.uleb128 0xd
+ 998 00a1 05        		.uleb128 0x5
+ 999 00a2 00        		.byte	0x0
+ 1000 00a3 03        		.uleb128 0x3
+ 1001 00a4 0E        		.uleb128 0xe
+ 1002 00a5 3A        		.uleb128 0x3a
+ 1003 00a6 0B        		.uleb128 0xb
+ 1004 00a7 3B        		.uleb128 0x3b
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 19
+
+
+ 1005 00a8 0B        		.uleb128 0xb
+ 1006 00a9 49        		.uleb128 0x49
+ 1007 00aa 13        		.uleb128 0x13
+ 1008 00ab 00        		.byte	0x0
+ 1009 00ac 00        		.byte	0x0
+ 1010 00ad 0E        		.uleb128 0xe
+ 1011 00ae 34        		.uleb128 0x34
+ 1012 00af 00        		.byte	0x0
+ 1013 00b0 03        		.uleb128 0x3
+ 1014 00b1 0E        		.uleb128 0xe
+ 1015 00b2 3A        		.uleb128 0x3a
+ 1016 00b3 0B        		.uleb128 0xb
+ 1017 00b4 3B        		.uleb128 0x3b
+ 1018 00b5 0B        		.uleb128 0xb
+ 1019 00b6 49        		.uleb128 0x49
+ 1020 00b7 13        		.uleb128 0x13
+ 1021 00b8 00        		.byte	0x0
+ 1022 00b9 00        		.byte	0x0
+ 1023 00ba 0F        		.uleb128 0xf
+ 1024 00bb 2E        		.uleb128 0x2e
+ 1025 00bc 01        		.byte	0x1
+ 1026 00bd 01        		.uleb128 0x1
+ 1027 00be 13        		.uleb128 0x13
+ 1028 00bf 3F        		.uleb128 0x3f
+ 1029 00c0 0C        		.uleb128 0xc
+ 1030 00c1 03        		.uleb128 0x3
+ 1031 00c2 0E        		.uleb128 0xe
+ 1032 00c3 3A        		.uleb128 0x3a
+ 1033 00c4 0B        		.uleb128 0xb
+ 1034 00c5 3B        		.uleb128 0x3b
+ 1035 00c6 0B        		.uleb128 0xb
+ 1036 00c7 27        		.uleb128 0x27
+ 1037 00c8 0C        		.uleb128 0xc
+ 1038 00c9 49        		.uleb128 0x49
+ 1039 00ca 13        		.uleb128 0x13
+ 1040 00cb 11        		.uleb128 0x11
+ 1041 00cc 01        		.uleb128 0x1
+ 1042 00cd 12        		.uleb128 0x12
+ 1043 00ce 01        		.uleb128 0x1
+ 1044 00cf 40        		.uleb128 0x40
+ 1045 00d0 0A        		.uleb128 0xa
+ 1046 00d1 00        		.byte	0x0
+ 1047 00d2 00        		.byte	0x0
+ 1048 00d3 10        		.uleb128 0x10
+ 1049 00d4 05        		.uleb128 0x5
+ 1050 00d5 00        		.byte	0x0
+ 1051 00d6 03        		.uleb128 0x3
+ 1052 00d7 0E        		.uleb128 0xe
+ 1053 00d8 3A        		.uleb128 0x3a
+ 1054 00d9 0B        		.uleb128 0xb
+ 1055 00da 3B        		.uleb128 0x3b
+ 1056 00db 0B        		.uleb128 0xb
+ 1057 00dc 49        		.uleb128 0x49
+ 1058 00dd 13        		.uleb128 0x13
+ 1059 00de 02        		.uleb128 0x2
+ 1060 00df 0A        		.uleb128 0xa
+ 1061 00e0 00        		.byte	0x0
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 20
+
+
+ 1062 00e1 00        		.byte	0x0
+ 1063 00e2 11        		.uleb128 0x11
+ 1064 00e3 2E        		.uleb128 0x2e
+ 1065 00e4 01        		.byte	0x1
+ 1066 00e5 3F        		.uleb128 0x3f
+ 1067 00e6 0C        		.uleb128 0xc
+ 1068 00e7 03        		.uleb128 0x3
+ 1069 00e8 0E        		.uleb128 0xe
+ 1070 00e9 3A        		.uleb128 0x3a
+ 1071 00ea 0B        		.uleb128 0xb
+ 1072 00eb 3B        		.uleb128 0x3b
+ 1073 00ec 0B        		.uleb128 0xb
+ 1074 00ed 27        		.uleb128 0x27
+ 1075 00ee 0C        		.uleb128 0xc
+ 1076 00ef 49        		.uleb128 0x49
+ 1077 00f0 13        		.uleb128 0x13
+ 1078 00f1 11        		.uleb128 0x11
+ 1079 00f2 01        		.uleb128 0x1
+ 1080 00f3 12        		.uleb128 0x12
+ 1081 00f4 01        		.uleb128 0x1
+ 1082 00f5 40        		.uleb128 0x40
+ 1083 00f6 0A        		.uleb128 0xa
+ 1084 00f7 00        		.byte	0x0
+ 1085 00f8 00        		.byte	0x0
+ 1086 00f9 00        		.byte	0x0
+ 1087               		.section	.debug_pubnames,"",@progbits
+ 1088 0000 4300 0000 		.long	67
+ 1089               	
+ 1090 0004 0200      		.word	2
+ 1091               	
+ 1092 0006 0000 0000 		.long	.Ldebug_info0
+ 1093               	
+ 1094 000a AA01 0000 		.long	426
+ 1095               	
+ 1096 000e 6400 0000 		.long	100
+ 1097               	
+ 1098 0012 5457 495F 		.string	"TWI_start"
+ 1098      7374 6172 
+ 1098      7400 
+ 1099 001c 7E00 0000 		.long	126
+ 1100               	
+ 1101 0020 5457 495F 		.string	"TWI_stop"
+ 1101      7374 6F70 
+ 1101      00
+ 1102 0029 1801 0000 		.long	280
+ 1103               	
+ 1104 002d 5457 495F 		.string	"TWI_read"
+ 1104      7265 6164 
+ 1104      00
+ 1105 0036 7401 0000 		.long	372
+ 1106               	
+ 1107 003a 5457 495F 		.string	"TWI_send"
+ 1107      7365 6E64 
+ 1107      00
+ 1108 0043 0000 0000 		.long	0
+ 1109               	
+ 1110               		.section	.debug_aranges,"",@progbits
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 21
+
+
+ 1111 0000 1000 0000 		.long	16
+ 1112               	
+ 1113 0004 0200      		.word	2
+ 1114               	
+ 1115 0006 0000 0000 		.long	.Ldebug_info0
+ 1116               	
+ 1117 000a 02        		.byte	0x2
+ 1118 000b 00        		.byte	0x0
+ 1119 000c 0000      		.word	.Ltext0
+ 1120               	
+ 1121 000e D200      		.word	.Letext0-.Ltext0
+ 1122               	
+ 1123 0010 0000      		.word	0
+ 1124               	
+ 1125 0012 0000      		.word	0
+ 1126               	
+ 1127               		.section	.debug_str,"MS",@progbits,1
+ 1128               	.LASF12:
+ 1129 0000 5F5F 7573 		.string	"__us"
+ 1129      00
+ 1130               	.LASF16:
+ 1131 0005 6163 6B5F 		.string	"ack_bit"
+ 1131      6269 7400 
+ 1132               	.LASF15:
+ 1133 000d 5457 495F 		.string	"TWI_read"
+ 1133      7265 6164 
+ 1133      00
+ 1134               	.LASF17:
+ 1135 0016 7563 5F64 		.string	"uc_data"
+ 1135      6174 6100 
+ 1136               	.LASF1:
+ 1137 001e 756E 7369 		.string	"unsigned char"
+ 1137      676E 6564 
+ 1137      2063 6861 
+ 1137      7200 
+ 1138               	.LASF11:
+ 1139 002c 5F64 656C 		.string	"_delay_loop_1"
+ 1139      6179 5F6C 
+ 1139      6F6F 705F 
+ 1139      3100 
+ 1140               	.LASF4:
+ 1141 003a 6C6F 6E67 		.string	"long unsigned int"
+ 1141      2075 6E73 
+ 1141      6967 6E65 
+ 1141      6420 696E 
+ 1141      7400 
+ 1142               	.LASF20:
+ 1143 004c 643A 5C32 		.string	"d:\\2009_project\\03_march\\fm4"
+ 1143      3030 395F 
+ 1143      7072 6F6A 
+ 1143      6563 745C 
+ 1143      3033 5F6D 
+ 1144               	.LASF9:
+ 1145 0069 646F 7562 		.string	"double"
+ 1145      6C65 00
+ 1146               	.LASF19:
+ 1147 0070 6932 632E 		.string	"i2c.c"
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 22
+
+
+ 1147      6300 
+ 1148               	.LASF8:
+ 1149 0076 5F5F 746D 		.string	"__tmp"
+ 1149      7000 
+ 1150               	.LASF18:
+ 1151 007c 474E 5520 		.string	"GNU C 3.4.6"
+ 1151      4320 332E 
+ 1151      342E 3600 
+ 1152               	.LASF2:
+ 1153 0088 756E 7369 		.string	"unsigned int"
+ 1153      676E 6564 
+ 1153      2069 6E74 
+ 1153      00
+ 1154               	.LASF10:
+ 1155 0095 5F64 656C 		.string	"_delay_us"
+ 1155      6179 5F75 
+ 1155      7300 
+ 1156               	.LASF6:
+ 1157 009f 6C6F 6E67 		.string	"long long unsigned int"
+ 1157      206C 6F6E 
+ 1157      6720 756E 
+ 1157      7369 676E 
+ 1157      6564 2069 
+ 1158               	.LASF21:
+ 1159 00b6 7569 6E74 		.string	"uint8_t"
+ 1159      385F 7400 
+ 1160               	.LASF14:
+ 1161 00be 5457 495F 		.string	"TWI_stop"
+ 1161      7374 6F70 
+ 1161      00
+ 1162               	.LASF5:
+ 1163 00c7 6C6F 6E67 		.string	"long long int"
+ 1163      206C 6F6E 
+ 1163      6720 696E 
+ 1163      7400 
+ 1164               	.LASF13:
+ 1165 00d5 5F5F 636F 		.string	"__count"
+ 1165      756E 7400 
+ 1166               	.LASF22:
+ 1167 00dd 5457 495F 		.string	"TWI_start"
+ 1167      7374 6172 
+ 1167      7400 
+ 1168               	.LASF7:
+ 1169 00e7 5F5F 7469 		.string	"__ticks"
+ 1169      636B 7300 
+ 1170               	.LASF23:
+ 1171 00ef 5457 495F 		.string	"TWI_send"
+ 1171      7365 6E64 
+ 1171      00
+ 1172               	.LASF3:
+ 1173 00f8 6C6F 6E67 		.string	"long int"
+ 1173      2069 6E74 
+ 1173      00
+ 1174               	.LASF0:
+ 1175 0101 7369 676E 		.string	"signed char"
+ 1175      6564 2063 
+ 1175      6861 7200 
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 23
+
+
+ 1176               	/* File "i2c.c": code  112 = 0x0070 ( 111), prologues   0, epilogues   1 */
+GAS LISTING C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s 			page 24
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 i2c.c
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s:3      *ABS*:0000003f __SREG__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s:4      *ABS*:0000003e __SP_H__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s:5      *ABS*:0000003d __SP_L__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s:6      *ABS*:00000000 __tmp_reg__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s:7      *ABS*:00000001 __zero_reg__
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s:20     .text:00000000 TWI_start
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s:62     .text:00000028 TWI_stop
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s:93     .text:00000034 TWI_read
+C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp/ccOIaaaa.s:158    .text:0000006c TWI_send
+
+UNDEFINED SYMBOLS
+__do_copy_data
+__do_clear_bss

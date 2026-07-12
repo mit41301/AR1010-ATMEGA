@@ -1,0 +1,1 @@
+<Project name="test1"><Folder name="header"><File path="delay_function.h"></File><File path="english_6x8_pixel.h"></File><File path="i2c.h"></File></Folder><Folder name="source"><File path="lcd.c"></File><File path="delay_function.c"></File><File path="i2c.c"></File></Folder><File path="mydefs.h"></File><File path="makefile"></File><File path="fm.c"></File></Project>
